@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://fluss.apache.org/">
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // 获取当前路径，例如 "/fluss-docs/blog/partial-updates/"
+    const fullPath = window.location.pathname;
+
+    // 移除路径中的 "/fluss-docs" 前缀
+    const newPath = fullPath.replace(/^\/fluss-docs/, '');
+
+    // 构建目标 URL
+    const newUrl = "https://fluss.apache.org " + newPath + window.location.search + window.location.hash;
+
+    // 跳转
+    window.location.replace(newUrl);
+  </script>
 </head>
+<body>
+  <p>正在跳转到 <a id="redirect-link" href="#">新地址</a>...</p>
+
+  <script>
+    // 更新链接文本（仅用于展示）
+    document.getElementById("redirect-link").href = newUrl;
+  </script>
+</body>
 </html>
